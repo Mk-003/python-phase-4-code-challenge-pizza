@@ -2,6 +2,7 @@
 from models import db, Restaurant, RestaurantPizza, Pizza
 from flask_migrate import Migrate
 from flask import Flask, request, make_response
+from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Api, Resource
 import os
 
