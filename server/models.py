@@ -49,6 +49,9 @@ class RestaurantPizza(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     price = db.Column(db.Integer, nullable=False)
 
+    pizza_id=db.Column(db.Integer)
+    restaurant_id=db.Column(db.Integer)
+
     # add relationships
 
     # add serialization rules
