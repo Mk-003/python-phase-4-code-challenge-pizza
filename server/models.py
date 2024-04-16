@@ -64,8 +64,8 @@ class RestaurantPizza(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     price = db.Column(db.Integer, nullable=False)
 
-    pizza_id=db.Column(db.Integer)
-    restaurant_id=db.Column(db.Integer)
+    pizza_id=db.Column(db.Integer,db.ForeignKey('restaurants.id', ondelete='CASCADE'))
+    restaurant_id=db.Column(db.Integer,db.ForeignKey('pizzas.id', ondelete='CASCADE'))
 
     # add relationships
     pizza = db.relationship("Pizza", back_populates="restaurant_pizzas")
